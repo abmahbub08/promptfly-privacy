@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="How PromptFly handles your information: what stays on your phone, and what leaves it.">
+  <title>PromptFly Privacy Policy</title>
+  <style>
+    :root {
+      --bg: #f7f6fb;
+      --surface: #ffffff;
+      --tint: #efe9fc;
+      --border: #e3dfec;
+      --text: #16131f;
+      --muted: #585469;
+      --accent: #6d33dc;
+      --accent-soft: #d9cdf7;
+      --code-bg: #f0edf6;
+      color-scheme: light;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #04050c;
+        --surface: #0e111b;
+        --tint: #17142b;
+        --border: #1e2230;
+        --text: #f3f2f8;
+        --muted: #b4bac9;
+        --accent: #a98bf5;
+        --accent-soft: #3b2a6b;
+        --code-bg: #141826;
+        color-scheme: dark;
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #04050c;
+      --surface: #0e111b;
+      --tint: #17142b;
+      --border: #1e2230;
+      --text: #f3f2f8;
+      --muted: #b4bac9;
+      --accent: #a98bf5;
+      --accent-soft: #3b2a6b;
+      --code-bg: #141826;
+      color-scheme: dark;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 400 1rem/1.65 ui-sans-serif, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      padding-inline: 20px;
+    }
+
+    .page {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding-block: 48px 72px;
+      display: grid;
+      gap: 40px;
+    }
+
+    header {
+      display: grid;
+      gap: 10px;
+    }
+
+    .wordmark {
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* The teleprompter's reading line: where the words you say sit. */
+    .wordmark::before {
+      content: "";
+      width: 22px;
+      height: 3px;
+      border-radius: 2px;
+      background: var(--accent);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 2.6rem);
+      line-height: 1.1;
+      font-weight: 750;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+
+    .meta {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.925rem;
+    }
+
+    .lede {
+      margin: 6px 0 0;
+      font-size: 1.075rem;
+      max-width: 62ch;
+    }
+
+    .short {
+      background: var(--tint);
+      border: 1px solid var(--accent-soft);
+      border-radius: 14px;
+      padding: 22px 24px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .short h2 {
+      margin: 0;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .short ul {
+      margin: 0;
+      padding-left: 1.15em;
+      display: grid;
+      gap: 8px;
+    }
+
+    .short li::marker {
+      color: var(--accent);
+    }
+
+    section {
+      display: grid;
+      gap: 12px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.3rem;
+      line-height: 1.3;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-wrap: balance;
+    }
+
+    h3 {
+      margin: 10px 0 0;
+      font-size: 1.02rem;
+      font-weight: 700;
+    }
+
+    p,
+    ul {
+      margin: 0;
+      max-width: 66ch;
+    }
+
+    ul {
+      padding-left: 1.2em;
+      display: grid;
+      gap: 6px;
+    }
+
+    strong {
+      font-weight: 650;
+    }
+
+    a {
+      color: var(--accent);
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+
+    code {
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 0.86em;
+      background: var(--code-bg);
+      padding: 0.1em 0.4em;
+      border-radius: 5px;
+      overflow-wrap: anywhere;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    table {
+      width: 100%;
+      min-width: 560px;
+      border-collapse: collapse;
+      font-size: 0.925rem;
+    }
+
+    th,
+    td {
+      text-align: left;
+      vertical-align: top;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    thead th {
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    td:first-child {
+      font-weight: 650;
+      width: 26%;
+    }
+
+    td:last-child {
+      color: var(--muted);
+      width: 24%;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <div class="wordmark">PromptFly</div>
+      <h1>Privacy Policy</h1>
+      <p class="meta">Effective 22 September 2026 · PromptFly for Android and iPhone</p>
+      <p class="lede">PromptFly is a teleprompter, camera, script writer and video editor for your phone. This page
+        explains what happens to your information when you use it. The short answer: it stays on your phone.</p>
+    </header>
+
+    <aside class="short" aria-labelledby="short-title">
+      <h2 id="short-title">The short version</h2>
+      <ul>
+        <li><strong>What you make stays on your phone.</strong> PromptFly has no accounts and no server, and we never
+          receive your scripts, recordings or videos.</li>
+        <li><strong>The free version shows ads from Google</strong>, and Google receives information about your device
+          to show them. Pro removes the ads, and the app then asks for none.</li>
+        <li><strong>AI script writing is optional.</strong> When you use it, what you submit goes straight from your
+          phone to the AI service you picked, using your own key.</li>
+        <li><strong>No analytics, no crash reporting, nothing sold.</strong></li>
+      </ul>
+    </aside>
+
+    <section aria-labelledby="who">
+      <h2 id="who">Who we are</h2>
+      <p>PromptFly is made by Mohammad Mahbub (“we”). If you have a question about this policy or your information,
+        email <a href="mailto:abmahbub08@gmail.com">abmahbub08@gmail.com</a>.</p>
+    </section>
+
+    <section aria-labelledby="on-phone">
+      <h2 id="on-phone">What stays on your phone</h2>
+      <p>Everything you make and set up in PromptFly is kept in the app’s private storage on your phone:</p>
+      <ul>
+        <li>your scripts, recordings, edited projects and exported videos;</li>
+        <li>your settings, such as teleprompter and camera preferences;</li>
+        <li>any AI service key you add, which is kept in your phone’s secure storage (the Android Keystore or the iPhone
+          Keychain);</li>
+        <li>whether you own Pro and, in the free version, when your phone was last online.</li>
+      </ul>
+      <p>We have no way to see any of this. It is removed when you delete it in the app, or when you uninstall
+        PromptFly. Exported videos are also saved to your phone’s gallery, where they stay until you delete them there.
+      </p>
+    </section>
+
+    <section aria-labelledby="permissions">
+      <h2 id="permissions">What PromptFly asks permission for</h2>
+      <ul>
+        <li><strong>Camera</strong> — to record video.</li>
+        <li><strong>Microphone</strong> — to record sound, and for dictation when you use it.</li>
+        <li><strong>Photos or storage</strong> — to add exported videos to your gallery. Android 11 and later need no
+          permission for this. On iPhone, PromptFly asks only to <em>add</em> to your photos, never to read them.</li>
+        <li><strong>Face ID, Touch ID or fingerprint</strong> — only if you turn on App Lock. Your phone does the check;
+          PromptFly is told only whether it succeeded.</li>
+        <li><strong>Internet</strong> — for ads, AI script writing and the free version’s connection check.</li>
+      </ul>
+      <p>PromptFly does not ask for your location, contacts or Bluetooth. A Bluetooth remote works because your phone
+        treats it as a keyboard.</p>
+    </section>
+
+    <section aria-labelledby="leaves">
+      <h2 id="leaves">When information leaves your phone</h2>
+      <p>Only in these cases, and never to us:</p>
+      <div class="table-wrap" role="region" aria-label="Who receives what" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Who</th>
+              <th scope="col">What they receive</th>
+              <th scope="col">When</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Google AdMob</td>
+              <td>Information about your device and the app, your device’s advertising ID, your IP address (from which a
+                rough location can be worked out), and how you interact with ads</td>
+              <td>Free version, while ads are shown</td>
+            </tr>
+            <tr>
+              <td>The AI service you choose</td>
+              <td>What you type into the script generator and, when you use Improve, the script being improved — sent
+                with your own key</td>
+              <td>Only when you use AI features</td>
+            </tr>
+            <tr>
+              <td>Your phone’s speech service</td>
+              <td>Your voice, to turn it into text</td>
+              <td>Only while you dictate</td>
+            </tr>
+            <tr>
+              <td>Google Play or the App Store</td>
+              <td>Your purchase of Pro</td>
+              <td>When you buy or restore Pro</td>
+            </tr>
+            <tr>
+              <td>Google’s connection check</td>
+              <td>An empty request that carries only what any web request does, such as your IP address</td>
+              <td>Free version, to check you are online</td>
+            </tr>
+            <tr>
+              <td>Apps you share to</td>
+              <td>The video or file you chose to share</td>
+              <td>Only when you share</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Ads in the free version</h3>
+      <p>The free version shows ads from Google AdMob: a banner on the home screen and in the script editor, and now and
+        then a full-screen ad after you finish a recording or an export. Google’s ad software receives the information
+        in the table above to show ads, limit how often you see the same one, measure them and prevent fraud. PromptFly
+        asks Google for non-personalised ads, and never shares your scripts, recordings or videos with Google.</p>
+      <p>If you are in the European Economic Area, the UK or Switzerland, Google’s consent form asks you before any ad
+        is shown, and you can change your answer at any time in <strong>Settings › Ad privacy choices</strong>. On
+        Android you can also reset or delete your advertising ID in your phone’s settings. Google explains how it uses
+        this information at <a
+          href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>.
+      </p>
+      <p>With Pro, PromptFly shows no ads and requests none.</p>
+
+      <h3>AI script writing</h3>
+      <p>AI features stay off until you add a key from a service you choose: Google Gemini, OpenAI, Anthropic,
+        OpenRouter, or an address you enter yourself. What you submit is sent directly from your phone to that service,
+        never through us, and the service handles it under its own terms and privacy policy. Any cost is billed to your
+        account with them. Your key never leaves your phone except to that service, is never included in backups, and
+        you can remove it in PromptFly’s AI settings.</p>
+
+      <h3>Dictation</h3>
+      <p>Dictation uses the speech recognition built into your phone — usually Google’s or Samsung’s on Android, and
+        Apple’s on iPhone. Depending on your phone and its settings, that service may process your voice on its own
+        servers, under its provider’s privacy policy. PromptFly receives only the resulting text.</p>
+
+      <h3>Buying Pro</h3>
+      <p>Pro is sold through Google Play or the App Store, which handle the payment under their own policies. We never
+        see your card or payment details. PromptFly is told only that you own Pro, and remembers that on your phone.</p>
+
+      <h3>The connection check</h3>
+      <p>The free version needs an internet connection at least once a day to start new recordings, edits and exports.
+        To check, it sends an empty request to <code>connectivitycheck.gstatic.com</code>, an address Google runs for
+        exactly this purpose. Nothing about you or what you make is included. PromptFly remembers only when the check
+        last succeeded. Pro skips the check entirely.</p>
+    </section>
+
+    <section aria-labelledby="backups">
+      <h2 id="backups">Backups</h2>
+      <p>A PromptFly backup file contains your scripts and settings. It does not contain recordings, videos or AI keys.
+        You choose where the file is saved or who it is sent to.</p>
+    </section>
+
+    <section aria-labelledby="dont">
+      <h2 id="dont">What PromptFly does not do</h2>
+      <ul>
+        <li>It has no accounts and no sign-in.</li>
+        <li>It has no analytics and no crash reporting.</li>
+        <li>It does not sell, rent or trade information about you.</li>
+        <li>It does not collect your location.</li>
+        <li>It does not itself track you across other companies’ apps or websites.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="children">
+      <h2 id="children">Children</h2>
+      <p>PromptFly is not directed at children under 13, and we do not knowingly collect personal information from
+        anyone. Ads in the free version are limited to Google’s “PG” content rating.</p>
+    </section>
+
+    <section aria-labelledby="keeping">
+      <h2 id="keeping">How long information is kept</h2>
+      <p>We keep nothing, because nothing reaches us. What PromptFly stores on your phone stays there until you delete
+        it or uninstall the app. Information received by Google, your AI service, your phone’s speech service or the
+        app store is kept under their own policies.</p>
+    </section>
+
+    <section aria-labelledby="choices">
+      <h2 id="choices">Your choices and rights</h2>
+      <ul>
+        <li>Delete any script, recording or project in the app. Uninstalling PromptFly removes everything it stored,
+          except videos you saved to your gallery.</li>
+        <li>Remove ads, and the ad requests with them, by buying Pro.</li>
+        <li>Change your ad consent in <strong>Settings › Ad privacy choices</strong>, where it is offered.</li>
+        <li>Remove your AI key at any time.</li>
+        <li>Turn off any permission in your phone’s settings.</li>
+      </ul>
+      <p>Because we hold no personal information about you, there is nothing on our side to access, correct or delete.
+        For information handled by Google, your AI service or your phone’s speech service, use their controls or contact
+        them directly. If anything here is unclear, email us and we will answer.</p>
+    </section>
+
+    <section aria-labelledby="europe">
+      <h2 id="europe">If you are in Europe or the UK</h2>
+      <p>Data protection law (the GDPR and the UK GDPR) asks for a reason behind each use of your information:</p>
+      <ul>
+        <li><strong>Ads</strong> — your consent, given in Google’s consent form. You can withdraw it at any time in
+          <strong>Settings › Ad privacy choices</strong>.</li>
+        <li><strong>AI script writing and dictation</strong> — providing a feature you asked for. Neither runs unless
+          you use it.</li>
+        <li><strong>Buying Pro</strong> — completing your purchase.</li>
+        <li><strong>The connection check</strong> — our legitimate interest in running the free version as this policy
+          describes. It carries nothing about you beyond the request itself.</li>
+      </ul>
+      <p>Google, your AI service and your phone’s speech service may process information outside your country, under
+        their own safeguards. You have the right to complain to your local data protection authority.</p>
+    </section>
+
+    <section aria-labelledby="security">
+      <h2 id="security">Security</h2>
+      <p>PromptFly keeps your work in storage that other apps cannot read, keeps keys in your phone’s secure storage,
+        and offers an optional App Lock. No system is perfectly secure, so keep your phone itself locked.</p>
+    </section>
+
+    <section aria-labelledby="changes">
+      <h2 id="changes">Changes to this policy</h2>
+      <p>If PromptFly changes how it handles information, we will update this page and the date at the top before the
+        change reaches you.</p>
+    </section>
+
+    <footer>
+      <p>PromptFly · Mohammad Mahbub · <a href="mailto:abmahbub08@gmail.com">abmahbub08@gmail.com</a></p>
+    </footer>
+  </div>
+</body>
+
+</html>
